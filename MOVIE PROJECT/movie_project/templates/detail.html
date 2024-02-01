@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body%}
+<div class="container">
+    <div class="row">
+        <div class="col md-6">
+            <img class="card-img-top" src="{{movie_detail.img.url}}" alt="Card image cap">
+        </div>
+                <div class="card" style="width: 750px ">
+
+                  <div class="card-body">
+                    <h5 class="card-title">{{movie_detail.name}}</h5>
+                    <p class="card-text">{{movie_detail.desc}}</p>
+                      <a href="{% url 'movieapp:update' movie_detail.id %}" class="card-link">Update</a>
+                      <a href="{% url 'movieapp:delete' movie_detail.id %}" class="card-link">Delete</a>
+
+                  </div>
+                </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
